@@ -1,0 +1,56 @@
+﻿@model BijBijCup.Models.RegisterUsers
+<div class="row" id="mainrow">
+    <div class="row" id="tornomentrow" style="padding: 3%;padding-bottom: 10%;">
+        <h5>
+            ثبت نام در مرحله ی مقدماتی بزرگترین رویداد بازی های ویدئویی شمال کشور
+        </h5>
+        <h6>
+            ابتدا قبل از ثبت نام <a href=@Url.Action("Help")>قوانین </a> را مطالعه کرده، تا بتوانید درک درستی از مسابقه داشته
+            باشید.
+        </h6>
+        <form action=@Url.Action("Register") method="post">
+            <div class="row" id="inputgrouprow">
+                <div class="mb-3 row">
+                    <label for="FullName" class="col-sm-5 col-form-label">نام و نام خاوادگی :</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control" id="FullName" name="FullName">
+                        @Html.ValidationMessageFor(model => model.FullName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="Phone" class="col-sm-5 col-form-label">شماره همراه :</label>
+                    <div class="col-sm-7">
+                        <input type="tel" class="form-control" id="Phone" name="Phone">
+                        @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="CodeMeli" class="col-sm-5 col-form-label">کد ملی:</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control" id="CodeMeli" name="CodeMeli">
+                        @Html.ValidationMessageFor(model => model.CodeMeli, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="GameNetID" class="col-sm-5 col-form-label">گیم نت :</label>
+                    <div class="col-sm-7">
+                        <select class="form-select" aria-label="Default select example" id="GameNetID" name="GameNetID">
+                            <option value="0" selected>انتخاب کنید</option>
+                            @foreach (var x in ViewBag.GameNet)
+                            {
+                                <option value=@x.GameNetID>@x.GameNetName (ظرفیت : @x.Capacity)</option>
+                            }
+                        </select>
+                        @Html.ValidationMessageFor(model => model.GameNetID, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <button class="btn btn-primary" type="submit">ثبت نام</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

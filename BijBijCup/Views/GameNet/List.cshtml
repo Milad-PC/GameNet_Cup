@@ -1,0 +1,40 @@
+﻿@model IEnumerable<BijBijCup.Models.RegisterUsers>
+<div class="row" id="mainrow">
+    <div class="row" id="tornomentrow" style="padding: 3%;padding-bottom: 10%;">
+        <h5>
+            لیست شرکت کنندگان
+        </h5>
+        <h6 style="text-align:center">
+            برای شرکت در تورنومنت لازم است اپلیکیشن بیج بیج نصب باشد
+        </h6>
+        <div class="table-responsive" style="margin-top:5%;">
+            <table class="table table-sm" style="color:white;">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col" style="text-align:right">نام کاربر</th>
+                        <th scope="col" style="text-align:center">شماره تماس</th>
+                        <th scope="col" style="text-align:left">کد ملی</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (BijBijCup.Models.RegisterUsers x in Model)
+                    {
+                        <tr>
+                            <td style="text-align:right">@x.FullName</td>
+                            <td style="text-align:center">@x.Phone</td>
+                            <td style="text-align:left">@x.CodeMeli</td>
+                        </tr>
+                    }
+                    @for (int i = 0; i < ViewBag.Capacity - Model.Count(); i++)
+                    {
+                        <tr>
+                            <td style="text-align:right">---</td>
+                            <td style="text-align:center">---</td>
+                            <td style="text-align:left">---</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+﻿@model IEnumerable<BijBijCup.Models.GameNet>
+<div class="row" id="mainrow">
+    <div class="row" id="tornomentrow" style="padding: 3%;padding-bottom: 10%;">
+        <h5>
+            راهنمای شرکت در مسابقات
+        </h5>
+        <h6>
+            برای شرکت در تورنومنت لازم است اپلیکیشن بیج بیج نصب باشد
+        </h6>
+        <div class="col-12">
+            <a class="btn btn-danger align-self-center" href="https://bijbij.ir/" style="margin-top:2%;margin-right:20%;">لینک نصب اپلیکیشن</a>
+        </div>
+        <div class="table-responsive" style="margin-top:5%;">
+            <table class="table table-sm" style="color:white;">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">نام گیم نت</th>
+                        <th scope="col">ظرفیت</th>
+                        <th scope="col" style="text-align:center">آدرس</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (BijBijCup.Models.GameNet x in Model)
+                    {
+                        <tr>
+                            <td>@x.GameNetName</td>
+                            <td style="text-align:center">@x.Capacity</td>
+                            <td>@x.Address</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

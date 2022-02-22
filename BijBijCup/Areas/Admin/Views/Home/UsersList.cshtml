@@ -1,0 +1,31 @@
+﻿@model IEnumerable<BijBijCup.Models.RegisterUsers>
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+    <h2 style="text-align:center;">لیست ثبت نامی ها</h2>
+    <div class="table-responsive">
+        <table class="table table-striped table-sm">
+            <thead>
+                <tr>
+                    <th scope="col">تاریخ ثبت نام</th>
+                    <th scope="col">نام کامل</th>
+                    <th scope="col">شماره همراه</th>
+                    <th scope="col">گیم نت</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    var x = Model.OrderByDescending(u => u.RegDate);
+                }
+                @foreach (BijBijCup.Models.RegisterUsers item in x)
+                {
+                    <tr>
+                        <td>@item.RegDate.ToShamsi()</td>
+                        <td>@item.FullName</td>
+                        <td>@item.Phone</td>
+                        <td>@item.GameNet.GameNetName</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</main>
+

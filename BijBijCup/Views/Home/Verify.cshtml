@@ -1,0 +1,67 @@
+﻿@model BijBijCup.Models.RegisterUsers
+<div class="row" id="mainrow">
+    <div class="row" id="tornomentrow" style="padding: 3%;padding-bottom: 10%;">
+        <h4 class="alert-success" style="text-align:center;">
+            ثبت نام شما به موفقیت انجام شد
+        </h4>
+        <label style="text-align:center;color:white;">
+            برای شرکت در تورنومنت لازم است اپلیکیشن بیج بیج نصب باشد که لینک آن را در پیامک ارسال شده دریافت میکنید. موفق باشید !!
+        </label>
+        <br style="margin-top:5%;" />
+        <!--Name-->
+        <div class="row" style="color:white;text-align:center;">
+            <div class="col-6">
+                <label style="font-weight:bold">نام کامل</label>
+            </div>
+            <div class="col-6">
+                <label style="text-align:center">@Model.FullName</label>
+            </div>
+        </div>
+        <!--Phone-->
+        <div class="row" style="color:white;text-align:center;">
+            <div class="col-6">
+                <label style="font-weight:bold">شماره همراه</label>
+            </div>
+            <div class="col-6">
+                <label style="text-align:center">@Model.Phone</label>
+            </div>
+        </div>
+        <!--CodeMeli-->
+        <div class="row" style="color:white;text-align:center;">
+            <div class="col-6">
+                <label style="font-weight:bold">کد ملی</label>
+            </div>
+            <div class="col-6">
+                <label style="text-align:center">@Model.CodeMeli</label>
+            </div>
+        </div>
+        <!--GameNet Name-->
+        <div class="row" style="color:white;text-align:center;">
+            <div class="col-6">
+                <label style="font-weight:bold">نام گیم نت</label>
+            </div>
+            <div class="col-6">
+                <label style="text-align:center">@ViewBag.GameNet.GameNetName</label>
+            </div>
+        </div>
+        <!--GameNet Address-->
+        <div class="row" style="color:white;text-align:center;">
+            <div class="col-6">
+                <label style="font-weight:bold">آدرس گیم نت</label>
+            </div>
+            <div class="col-6">
+                <label style="text-align:center">@ViewBag.GameNet.Address</label>
+            </div>
+        </div>
+        <!--GameNet Cap-->
+        <div class="row" style="color:white;text-align:center;">
+            <div class="col-6">
+                <label style="font-weight:bold">ظرفیت گیم نت</label>
+            </div>
+            <div class="col-6">
+                <label style="text-align:center">@ViewBag.GameNet.Capacity</label>
+            </div>
+        </div>
+    </div>
+    <img src="~/Images/pesmaxresdefault1.png" />
+</div>
