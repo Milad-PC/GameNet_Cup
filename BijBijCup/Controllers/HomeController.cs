@@ -24,8 +24,8 @@ namespace BijBijCup.Controllers
             {
                 x = 0;
             }
-            
-            
+
+
             ViewBag.Cap = $"{x - db.Users.Count()}/{x}";
             return View();
         }
@@ -114,19 +114,31 @@ namespace BijBijCup.Controllers
                 //SMS
                 string text = $"کاربر گرامی جناب {input.FullName} ثبت نام" +
                                 $" شما با موفقیت انجام شد در گیم نت {g.GameNetName} منتظر شما هستیم\nآدرس" +
-                                $" : {g.Address}\n لینک نصب اپلیکیشن : https://lightcompany.ir/";
-                PanelService.TrezSmsServiceSoap trezSms = new PanelService.TrezSmsServiceSoapClient();
-                PanelService.ArrayOfString resive = new PanelService.ArrayOfString();
-                resive.Add(input.Phone);
-                PanelService.SendMessageRequestBody reqBody = new PanelService.SendMessageRequestBody("***", "***"
-                    , "***", text, resive, 0, null);
-                PanelService.SendMessageRequest req = new PanelService.SendMessageRequest(reqBody);
-                string result = trezSms.SendMessage(req).Body.SendMessageResult[0].ToString();
+                                $" : {g.Address}\n لینک نصب اپلیکیشن : https://bijbij.ir/";
+                SmsServer.smsserverPortType client = new SmsServer.smsserverPortTypeClient();
+                SmsServer.sendPatternSmsRequest sprq = new SmsServer.sendPatternSmsRequest();
+                sprq.user = "ap-9113200056";
+                sprq.pass = "9113200056";
+                sprq.toNum = new string[] { input.Phone };
+                sprq.fromNum = "3000505";
+                sprq.pattern_code = "34dktenteo";
+
+
+                var data = new SmsServer.input_data_type[] {
+                    // key is your parameter name and value is what you want to send to the receiptor 
+                    new SmsServer.input_data_type(){ key ="name",value = input.FullName } ,
+                    new SmsServer.input_data_type(){ key ="gamenet",value = g.GameNetName },
+                     new SmsServer.input_data_type(){ key ="address",value = g.Address }
+                };
+                sprq.input_data = data;
+
+                string result = client.sendPatternSms(sprq).@return;
+                //End SMS
                 Models.SMSHis s = new Models.SMSHis()
                 {
-                    Phone=input.Phone,
-                    Result=result,
-                    SendDate=DateTime.Now,
+                    Phone = input.Phone,
+                    Result = result,
+                    SendDate = DateTime.Now,
                     Text = text
                 };
                 db.SMS.Add(s);

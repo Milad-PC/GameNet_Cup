@@ -96,60 +96,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Connected Services\PanelService\BijBijCup.PanelService.ArrayOfInt.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\PanelService\BijBijCup.PanelService.ArrayOfLong.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\PanelService\BijBijCup.PanelService.GetCreditResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\PanelService\BijBijCup.PanelService.GetMessageStatusResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\PanelService\BijBijCup.PanelService.GetReciveMessageResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\PanelService\BijBijCup.PanelService.GetSmsPriceResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\PanelService\BijBijCup.PanelService.GetUnReciveMessageCountResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\PanelService\BijBijCup.PanelService.SaveContactResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\PanelService\BijBijCup.PanelService.SendCourseMessageResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\PanelService\BijBijCup.PanelService.SendMessageForPhpResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\PanelService\BijBijCup.PanelService.SendMessageResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\PanelService\BijBijCup.PanelService.SendMessagesWithUDHResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\PanelService\BijBijCup.PanelService.SendMessageWithUDHResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\PanelService\BijBijCup.PanelService.SendMultiMessageResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\PanelService\BijBijCup.PanelService.SendOneMessageQuicklyResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\PanelService\BijBijCup.PanelService.SendOneMessageResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\PanelService\BijBijCup.PanelService.SendSchaduleMessageForPhpResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\PanelService\BijBijCup.PanelService.SendSchaduleMessageResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
@@ -159,10 +105,15 @@
     <Content Include="Areas\Admin\Views\Home\LastRegister.cshtml" />
     <Content Include="Areas\Admin\Views\GameNets\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Home\UsersList.cshtml" />
-    <None Include="Connected Services\PanelService\TrezSmsService.disco" />
-    <None Include="Connected Services\PanelService\configuration91.svcinfo" />
-    <None Include="Connected Services\PanelService\configuration.svcinfo" />
-    <None Include="Connected Services\PanelService\Reference.svcmap">
+    <Content Include="Connected Services\SmsServer\BijBijCup.SmsServer.GetCreditResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\SmsServer\BijBijCup.SmsServer.sendPatternSmsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\SmsServer\configuration91.svcinfo" />
+    <None Include="Connected Services\SmsServer\configuration.svcinfo" />
+    <None Include="Connected Services\SmsServer\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -195,10 +146,10 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <None Include="Connected Services\PanelService\TrezSmsService.wsdl" />
     <Content Include="fonts\Yekan.eot" />
     <Content Include="fonts\Yekan.ttf" />
     <Content Include="fonts\Yekan.woff" />
+    <None Include="Connected Services\SmsServer\server.wsdl" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\FTPProfile.pubxml" />
@@ -227,7 +178,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\GameNetsController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
-    <Compile Include="Connected Services\PanelService\Reference.cs">
+    <Compile Include="Connected Services\SmsServer\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -296,7 +247,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\PanelService\" />
+    <WCFMetadataStorage Include="Connected Services\SmsServer\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202202220912115_initial.resx">

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d74184a2-ba82-485d-a28a-134a82eb0fcc" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="0c9ac8d8-7f11-4c78-b6a8-c3cdcc61d1e6" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,11 +19,10 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://smspanel.trez.ir/TrezSmsService.asmx" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://188.0.240.110/public/class/sms/csharpservice_new/server.php?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="TrezSmsService.disco" MetadataType="Disco" ID="caeeca84-2c70-4fdf-95d6-c0004efa2fb4" SourceId="1" SourceUrl="http://smspanel.trez.ir/TrezSmsService.asmx?disco" />
-    <MetadataFile FileName="TrezSmsService.wsdl" MetadataType="Wsdl" ID="a18dcbc9-2bdf-4736-be2c-f7953b155095" SourceId="1" SourceUrl="http://smspanel.trez.ir/TrezSmsService.asmx?wsdl" />
+    <MetadataFile FileName="server.wsdl" MetadataType="Wsdl" ID="8d96a35d-5171-45f3-acb5-fe4ff99664fc" SourceId="1" SourceUrl="http://188.0.240.110/public/class/sms/csharpservice_new/server.php?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
