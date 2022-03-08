@@ -35,6 +35,7 @@ namespace BijBijCup.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
         [HttpPost]
+        [AllowAnonymous]
         public ActionResult SignIn(string UserName, string Password, bool Remember = true)
         {
             if (UserName == "Mobin" && Password == "Mobin@Light")
